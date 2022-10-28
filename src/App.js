@@ -1,4 +1,5 @@
 import Hero from './components/Hero';
+import Movies from './components/Movies';
 import './App.css';
 
 function App() {
@@ -7,9 +8,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Hero />
+        <Movies />
         {myName
         ? <p>welcome back.</p>
-      :<button>Login</button>}
+      :<p>Login</p>}
+      <p> Please Login above</p>
        <p>Hello {myName || 'guest'}</p>
       </header>
     </div>

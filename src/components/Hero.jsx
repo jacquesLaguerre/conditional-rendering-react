@@ -1,17 +1,22 @@
-import {useState} from 'react'
+import React, {useState} from 'react'
 
 function Hero(){
     const[user, setUser] = useState()
     console.log({user})
-    //user === falsey (undefined)
-    //!user === truthy
-    //!!user === false (Boolean)
-    //!!!user === true (Boolean)
+    const handleLogin = () => {
+        setUser ({firstName: 'Jacques', email: 'jacquesblaguerre@gmail.com', admin: true})
+    }
+    const handleLogout = () => {
+        setUser()
+    }
     if(!user){
-        return <button>Login</button>
+        return <button onClick={handleLogin}>Login</button>
     }
 return (
-    <h1>Hello {user}</h1>
+<>
+    <h1>Hello {user.firstName}</h1>
+    <button onClick={handleLogout}>Log out</button>
+    </>  
 )
 
 
